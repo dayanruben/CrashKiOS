@@ -15,6 +15,7 @@ jobs:
 #          property: 'VERSION_NAME'
 
   deploy:
+    if: github.repository == 'touchlab/CrashKiOS'
     runs-on: macOS-latest
     steps:
       - name: Checkout the repo
