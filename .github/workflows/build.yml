@@ -10,6 +10,7 @@ on:
 
 jobs:
   build:
+    if: ${{ github.ref != 'refs/heads/eap/kotlin' && github.head_ref != 'eap/kotlin' }}
     strategy:
       matrix:
         os: [macOS-latest]
