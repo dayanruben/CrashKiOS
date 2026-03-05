@@ -10,7 +10,6 @@ on:
 
 jobs:
   build:
-    if: ${{ github.ref != 'refs/heads/eap/kotlin' && github.head_ref != 'eap/kotlin' }}
     strategy:
       matrix:
         os: [macOS-latest]
@@ -39,7 +38,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Build
-        run: ./gradlew ktlintCheck build --no-daemon --stacktrace
+        run: ./gradlew ktlintCheck assemble allTests --no-daemon --stacktrace
 
 env:
   GRADLE_OPTS: -Dkotlin.incremental=false -Dorg.gradle.jvmargs="-Xmx4g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 -XX:MaxMetaspaceSize=512m"
