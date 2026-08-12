@@ -11,9 +11,11 @@
  * the License.
  */
 
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     `kotlin-dsl`
-    kotlin("jvm")
     id("java-gradle-plugin")
     id("com.vanniktech.maven.publish.base")
     id("com.gradle.plugin-publish")
@@ -48,6 +50,13 @@ dependencies {
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(8))
+    }
+}
+
+tasks.withType<KotlinCompile>().configureEach {
+    compilerOptions {
+        apiVersion.set(KotlinVersion.KOTLIN_2_1)
+        languageVersion.set(KotlinVersion.KOTLIN_2_1)
     }
 }
 

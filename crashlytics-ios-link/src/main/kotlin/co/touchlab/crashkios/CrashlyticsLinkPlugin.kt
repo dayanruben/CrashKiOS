@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION", "DEPRECATION_ERROR")
+
 /*
  * Copyright (c) 2022 Touchlab.
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except

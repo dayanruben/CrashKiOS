@@ -5,20 +5,20 @@ import com.rickclephas.kmp.nsexceptionkt.core.causes
 import kotlinx.cinterop.ExperimentalForeignApi
 
 @OptIn(ExperimentalForeignApi::class)
-actual class BugsnagCallsActual : BugsnagCalls {
-    override fun logMessage(message: String) {
+actual class BugsnagCallsActual actual constructor() : BugsnagCalls {
+    actual override fun logMessage(message: String) {
         Bugsnag.leaveBreadcrumbWithMessage(message)
     }
 
-    override fun sendHandledException(throwable: Throwable) {
+    actual override fun sendHandledException(throwable: Throwable) {
         sendException(throwable, true)
     }
 
-    override fun sendFatalException(throwable: Throwable) {
+    actual override fun sendFatalException(throwable: Throwable) {
         sendException(throwable, false)
     }
 
-    override fun setCustomValue(section: String, key: String, value: Any) {
+    actual override fun setCustomValue(section: String, key: String, value: Any) {
         Bugsnag.addMetadata(value, key, section)
     }
 
