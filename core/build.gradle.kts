@@ -37,21 +37,17 @@ kotlin {
         publishAllLibraryVariants()
     }
 
-    macosX64()
     macosArm64()
     iosX64()
     iosArm64()
 //    iosArm32()
     iosSimulatorArm64()
-    watchosArm32()
     watchosArm64()
     watchosSimulatorArm64()
 //    watchosX86()
-    watchosX64()
     watchosDeviceArm64()
     tvosArm64()
     tvosSimulatorArm64()
-    tvosX64()
 
     sourceSets {
         commonTest {
